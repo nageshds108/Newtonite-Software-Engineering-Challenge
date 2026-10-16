@@ -1,0 +1,23 @@
+{
+  "name": "opsdesk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Team operations work management application",
+  "engines": {
+    "node": ">=20 <23"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "build": "npm run build --workspace client",
+    "test": "npm run test --workspace server",
+    "start": "npm run start --workspace server",
+    "seed": "npm run seed --workspace server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
