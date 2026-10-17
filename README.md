@@ -43,7 +43,7 @@ Requirements: Node.js 20+, npm, and MongoDB running as a **replica set** (single
    npm test
    ```
 
-For a production UI build, run `npm run build`. Configure `MONGODB_URI` and a strong `JWT_SECRET` in the deployment environment, then start the API with `npm start`. If you deploy the frontend separately, also set `CLIENT_ORIGIN` to its exact HTTPS origin.
+For the Render deployment, connect the repository as a Blueprint using `render.yaml`. It creates a free Node web service for the API and a static site for the frontend. Set `MONGODB_URI` on the API service, set `CLIENT_ORIGIN` to the frontend's exact HTTPS origin, and set `VITE_API_URL` on the static site to the API's HTTPS origin. The two origins should be the service URLs shown by Render, without trailing slashes. The API service also needs a strong `JWT_SECRET`.
 
 ## API outline
 
